@@ -36,9 +36,9 @@ public class UfResourse {
 		return listaUf;
 	}
 	
-	@DeleteMapping("/{codgo}")
-	public void delete(@PathVariable Long codigo) {
-		ufService.delete(codigo);
+	@DeleteMapping("/{codigo}")
+	public void excluir(@PathVariable Long codigo) {
+		ufService.excluir(codigo);
 	}
 	
 	@GetMapping("{codigo}")

@@ -19,7 +19,7 @@ public class UfService {
 		return ufRepository.save(uf);
 	}
 
-	public void delete(Long codigo) {
+	public void excluir(Long codigo) {
 		ufRepository.deleteById(codigo);
 	}
 	

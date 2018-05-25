@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 public class Uf {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long codigo;
+	private Long codigo;
 	
 	@NotNull
 	private String sigla;
@@ -18,11 +18,11 @@ public class Uf {
 	@NotNull
 	private String nome;
 	
-	public long getCodigo() {
+	public Long getCodigo() {
 		return codigo;
 	}
 	
-	public void setCodigo(long codigo) {
+	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
 	
