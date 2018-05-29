@@ -9,7 +9,7 @@ import com.inova.webservice.WebServiceInova.model.Uf;
 
 @RestController
 @RequestMapping("/uf")
-public class UfResourse extends GenericResource<Uf>{
+public class UfResource extends GenericResource<Uf>{
 	
 	
 }

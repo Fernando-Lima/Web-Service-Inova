@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.inova.webservice.WebServiceInova.DAO.DAO;
 import com.inova.webservice.WebServiceInova.model.MinhaEntidade;
+import com.inova.webservice.WebServiceInova.model.Uf;
 
 public class GenericResource <T extends MinhaEntidade>{
 	
@@ -43,7 +44,7 @@ public class GenericResource <T extends MinhaEntidade>{
 	}
 	
 	@PutMapping("/{codigo}")
-	public T atualizar(@PathVariable Long codigo,@Valid @RequestBody T entity ){
+	public T atualizar(@PathVariable("codigo") Long codigo,@Valid @RequestBody T entity ){
 		return dao.save(entity);
 	}
 }
