@@ -39,7 +39,7 @@ public class Cliente extends MinhaEntidade {
 	private Integer numeroAditivo;
 
 	@NotNull
-	@Column(unique=true) // chave única da tupla da tabela
+	@Column(unique=true, length=14) // chave única da tupla da tabela e 14 caracteres
 	private Integer cnpj;
 
 	@NotNull
