@@ -1,5 +1,6 @@
 package com.inova.webservice.WebServiceInova.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 
@@ -15,6 +16,7 @@ public class Uf extends MinhaEntidade{
 	private String sigla;
 	
 	@NotNull
+	@Column(unique=true)  // chave única da tupla da tabela
 	private String nome;
 	
 	public String getSigla() {

@@ -1,5 +1,6 @@
 package com.inova.webservice.WebServiceInova.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,12 +20,13 @@ public class Cidade extends MinhaEntidade {
 	private String nome;
 
 	@NotNull
+	@Column(unique=true)  // chave única da tupla da tabela
 	private Integer cep;
 
 	private Integer populacao;
 	
 	@ManyToOne
-	@JoinColumn(name="uf_idUf")
+	@JoinColumn(name="uf_idUf")  // chave única da tupla da tabela
 	private Uf uf;
 
 	public String getNome() {
