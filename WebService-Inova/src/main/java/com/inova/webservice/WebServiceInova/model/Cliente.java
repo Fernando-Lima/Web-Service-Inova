@@ -21,25 +21,25 @@ public class Cliente extends MinhaEntidade {
 	private String nome;
 
 	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
 	private Date data;
 
 	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
 	private Date dataInicioContrato;
 
 	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
 	private Date dataFinalContrato;
 
 	@NotNull
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
 	private Date sla;
 
 	private Integer numeroAditivo;
 
 	@NotNull
-	@Column(unique = true)
+	@Column(unique=true) // chave única da tupla da tabela
 	private Integer cnpj;
 
 	@NotNull
