@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -39,11 +41,14 @@ public class Cliente extends MinhaEntidade {
 	private Integer numeroAditivo;
 
 	@NotNull
-	@Column(unique=true, length=14) // chave única da tupla da tabela e 14 caracteres
-	private Integer cnpj;
+	@Column(unique=true, length = 14) // chave única da tupla da tabela e 14 caracteres
+	private Long cnpj;
 
 	@NotNull
 	private String endereco;
+	
+	@Enumerated(EnumType.STRING)
+	private situacaoCliente situacaoCliente;
 
 	@NotNull
 	@ManyToOne
@@ -97,12 +102,12 @@ public class Cliente extends MinhaEntidade {
 		this.numeroAditivo = numeroAditivo;
 	}
 
-	public Integer getCnpj() {
+	public Long getCnpj() {
 		return cnpj;
 	}
 
 	
-	public void setCnpj(Integer cnpj) {
+	public void setCnpj(Long cnpj) {
 		this.cnpj = cnpj;
 	}
 
@@ -113,6 +118,14 @@ public class Cliente extends MinhaEntidade {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
+	
+	public situacaoCliente getSituacaoCliente() {
+		return situacaoCliente;
+	}
+
+	public void setSituacaoCliente(situacaoCliente situacaoCliente) {
+		this.situacaoCliente = situacaoCliente;
+	}
 
 	public Cidade getCidade() {
 		return cidade;
@@ -121,5 +134,4 @@ public class Cliente extends MinhaEntidade {
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
-
 }
