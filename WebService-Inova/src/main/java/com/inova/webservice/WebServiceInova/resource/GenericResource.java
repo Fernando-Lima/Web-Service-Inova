@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.inova.webservice.WebServiceInova.DAO.DAO;
+import com.inova.webservice.WebServiceInova.error.ResourceNotFoundException;
 import com.inova.webservice.WebServiceInova.model.MinhaEntidade;
-import com.inova.webservice.WebServiceInova.model.Uf;
 
 public class GenericResource <T extends MinhaEntidade>{
 	
 	@Autowired
-	private DAO<T> dao;;
+	private DAO<T> dao;
 
 	@PostMapping
 	public T salvar(@RequestBody @Valid T entity) {
@@ -35,16 +35,28 @@ public class GenericResource <T extends MinhaEntidade>{
 	
 	@DeleteMapping("/{codigo}")
 	public void excluir(@PathVariable Long codigo) {
+		verifyIfExists(codigo);
 		dao.deleteById(codigo);
 	}
 	
 	@GetMapping("/{codigo}")
 	public Optional<T> buscar(@PathVariable Long codigo){
+		verifyIfExists(codigo);
 		return dao.findById(codigo);
 	}
 	
 	@PutMapping("/{codigo}")
 	public T atualizar(@PathVariable("codigo") Long codigo,@Valid @RequestBody T entity ){
+		verifyIfExists(codigo);
 		return dao.save(entity);
+	}
+	
+	//Generic method to verify if exists the object by id
+	public void verifyIfExists(Long codigo) {
+		Object obj = dao.findById(codigo);
+		System.out.println(obj);
+		if(obj == Optional.empty() ) {
+			throw new ResourceNotFoundException("Objeto não encontrado >>> codigo: "+ codigo );
+		}
 	}
 }
