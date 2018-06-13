@@ -54,7 +54,6 @@ public class GenericResource <T extends MinhaEntidade>{
 	//Generic method to verify if exists the object by id
 	public void verifyIfExists(Long codigo) {
 		Object obj = dao.findById(codigo);
-		System.out.println(obj);
 		if(obj == Optional.empty() ) {
 			throw new ResourceNotFoundException("Objeto não encontrado >>> codigo: "+ codigo );
 		}
