@@ -38,6 +38,9 @@ public class Produto extends MinhaEntidade{
 	private SetorCliente setorCliente;
 	
 	@ManyToOne
+	private Setor setor;
+	
+	@ManyToOne
 	private Fornecedor fornecedor;
 
 	public String getNome() {
@@ -83,7 +86,15 @@ public class Produto extends MinhaEntidade{
 	public SetorCliente getSetorCliente() {
 		return setorCliente;
 	}
+	
+	public void setSetor(Setor setor) {
+		this.setor = setor;
+	}
 
+	public Setor getSetor() {
+		return setor;
+	}
+	
 	public void setSetorCliente(SetorCliente setorCliente) {
 		this.setorCliente = setorCliente;
 	}
