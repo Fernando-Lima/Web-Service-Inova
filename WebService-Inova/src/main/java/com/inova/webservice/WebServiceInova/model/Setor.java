@@ -16,7 +16,7 @@ public class Setor extends MinhaEntidade{
 	private String nome;
 	
 	@ManyToOne
-	private Setor setor;
+	private Unidade unidade;
 	
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -26,11 +26,11 @@ public class Setor extends MinhaEntidade{
 		return nome;
 	}
 	
-	public void setSetor(Setor setor) {
-		this.setor = setor;
+	public void setUnidade(Unidade unidade) {
+		this.unidade = unidade;
 	}
 	
-	public Setor getSetor() {
-		return setor;
+	public Unidade getUnidade() {
+		return unidade;
 	}
 }

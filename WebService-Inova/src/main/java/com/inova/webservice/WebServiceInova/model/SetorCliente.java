@@ -1,10 +1,8 @@
 package com.inova.webservice.WebServiceInova.model;
 
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -20,10 +18,6 @@ public class SetorCliente extends MinhaEntidade{
 	
 	@ManyToOne
 	private LocalUnidade localUnidade;
-	
-	//carregar uma lista de produtos dentro do setor
-	@OneToMany
-	private List<Produto> produtos;
 
 	public String getNome() {
 		return nome;
@@ -39,16 +33,6 @@ public class SetorCliente extends MinhaEntidade{
 
 	public void setLocalUnidade(LocalUnidade localUnidade) {
 		this.localUnidade = localUnidade;
-	}
-
-	public List<Produto> getProdutos() {
-		return produtos;
-	}
-
-	public void setProdutos(List<Produto> produtos) {
-		this.produtos = produtos;
-	}
-	
-	
+	}	
 	
 }
