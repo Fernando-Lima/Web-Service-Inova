@@ -28,20 +28,17 @@ public class Produto extends MinhaEntidade{
 	
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
-	private Date dataCompra;
-	
+	private Date garantia;
+
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
-	private Date garantia;
-	
-	@ManyToOne
-	private SetorCliente setorCliente;
-	
-	@ManyToOne
-	private Setor setor;
+	private Date dataEntrada; //dia em que foi dado entrada do produto
 	
 	@ManyToOne
 	private Fornecedor fornecedor;
+	
+	@ManyToOne
+	private Setor setor;
 
 	public String getNome() {
 		return nome;
@@ -67,14 +64,6 @@ public class Produto extends MinhaEntidade{
 		this.descricao = descricao;
 	}
 
-	public Date getDataCompra() {
-		return dataCompra;
-	}
-
-	public void setDataCompra(Date dataCompra) {
-		this.dataCompra = new Date();
-	}
-
 	public Date getGarantia() {
 		return garantia;
 	}
@@ -82,21 +71,21 @@ public class Produto extends MinhaEntidade{
 	public void setGarantia(Date garantia) {
 		this.garantia = new Date();
 	}
-
-	public SetorCliente getSetorCliente() {
-		return setorCliente;
+	
+	public Date getDataEntrada() {
+		return dataEntrada;
 	}
 	
-	public void setSetor(Setor setor) {
-		this.setor = setor;
+	public void setDataEntrada(Date dataEntrada) {
+		this.dataEntrada = new Date();
 	}
-
+	
 	public Setor getSetor() {
 		return setor;
 	}
 	
-	public void setSetorCliente(SetorCliente setorCliente) {
-		this.setorCliente = setorCliente;
+	public void setSetor(Setor setor) {
+		this.setor = setor;
 	}
 
 	public Fornecedor getFornecedor() {
