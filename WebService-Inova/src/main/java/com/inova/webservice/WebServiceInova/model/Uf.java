@@ -13,6 +13,7 @@ public class Uf extends MinhaEntidade{
 	private static final long serialVersionUID = 1L;
 
 	@NotNull
+	@Column(unique=true)  // chave única da tupla da tabela
 	private String sigla;
 	
 	@NotNull
