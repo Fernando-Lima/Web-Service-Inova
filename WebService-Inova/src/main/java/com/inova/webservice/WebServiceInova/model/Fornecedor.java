@@ -16,6 +16,7 @@ public class Fornecedor extends MinhaEntidade {
 	private String nome;
 
 	@ManyToOne
+	@NotNull
 	private Cidade cidade;
 
 	public String getNome() {

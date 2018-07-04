@@ -35,9 +35,11 @@ public class Produto extends MinhaEntidade{
 	private Date dataEntrada; //dia em que foi dado entrada do produto
 	
 	@ManyToOne
+	@NotNull
 	private Fornecedor fornecedor;
 	
 	@ManyToOne
+	@NotNull
 	private Setor setor;
 
 	public String getNome() {

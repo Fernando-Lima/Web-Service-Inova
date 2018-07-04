@@ -23,10 +23,12 @@ public class Cidade extends MinhaEntidade {
 	@Column(unique=true)  // chave única da tupla da tabela
 	private Integer cep;
 
+	//é necessário informar a população?
 	private Integer populacao;
 	
 	@ManyToOne
 	@JoinColumn(name="uf_idUf")  // chave única da tupla da tabela
+	@NotNull
 	private Uf uf;
 
 	public String getNome() {

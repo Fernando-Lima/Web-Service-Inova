@@ -1,11 +1,10 @@
 package com.inova.webservice.WebServiceInova.model;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class UnidadeCliente extends MinhaEntidade{
+public class Cargo extends MinhaEntidade{
 
 	/**
 	 * 
@@ -14,27 +13,22 @@ public class UnidadeCliente extends MinhaEntidade{
 	
 	@NotNull
 	private String nome;
-	
-	@ManyToOne
 	@NotNull
-	private Cliente cliente;
-
+	private String descricao;
+	
 	public String getNome() {
 		return nome;
 	}
-
+	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	
+	public String getDescricao() {
+		return descricao;
 	}
 	
-	
-
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 }

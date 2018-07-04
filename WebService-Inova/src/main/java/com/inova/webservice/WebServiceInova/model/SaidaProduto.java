@@ -21,6 +21,7 @@ public class SaidaProduto extends MinhaEntidade{
 	private Produto produto;
 	
 	@ManyToOne
+	@NotNull
 	private Setor setor;
 	
 	public Date getDataSaida() {

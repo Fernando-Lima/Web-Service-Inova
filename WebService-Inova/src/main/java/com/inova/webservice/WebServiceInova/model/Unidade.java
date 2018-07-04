@@ -19,6 +19,7 @@ public class Unidade extends MinhaEntidade{
 	private String endereco;
 	
 	@ManyToOne
+	@NotNull
 	private Cidade cidade;
 	
 	public void setNome(String nome) {

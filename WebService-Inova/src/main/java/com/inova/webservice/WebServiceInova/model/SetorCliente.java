@@ -17,6 +17,7 @@ public class SetorCliente extends MinhaEntidade{
 	private String nome;
 	
 	@ManyToOne
+	@NotNull
 	private LocalUnidade localUnidade;
 
 	public String getNome() {
