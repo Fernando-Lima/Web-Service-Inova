@@ -27,11 +27,11 @@ public class Cliente extends MinhaEntidade {
 	private Date data;
 
 	@NotNull
-	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
+	@Temporal(TemporalType.DATE) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
 	private Date dataInicioContrato;
 
 	@NotNull
-	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
+	@Temporal(TemporalType.DATE) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
 	private Date dataFinalContrato;
 
 	@NotNull
