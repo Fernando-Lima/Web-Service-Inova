@@ -11,6 +11,10 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 public class Cliente extends MinhaEntidade {
 
@@ -24,18 +28,22 @@ public class Cliente extends MinhaEntidade {
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss", timezone="GMT-3")
 	private Date data;
 
-	@NotNull
-	@Temporal(TemporalType.DATE) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
+	@DateTimeFormat(pattern="dd/MM/yyyy")
+	@Temporal(TemporalType.DATE)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy", timezone="GMT-3")
 	private Date dataInicioContrato;
 
-	@NotNull
-	@Temporal(TemporalType.DATE) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
+	@DateTimeFormat(pattern="dd/MM/yyyy")
+	@Temporal(TemporalType.DATE)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy", timezone="GMT-3")
 	private Date dataFinalContrato;
 
 	@NotNull
 	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss", timezone="GMT-3")
 	private Date sla;
 
 	private Integer numeroAditivo;
@@ -75,7 +83,7 @@ public class Cliente extends MinhaEntidade {
 	}
 
 	public void setDataInicioContrato(Date dataInicioContrato) {
-		this.dataInicioContrato = new Date();
+		this.dataInicioContrato = dataInicioContrato;
 	}
 
 	public Date getDataFinalContrato() {
