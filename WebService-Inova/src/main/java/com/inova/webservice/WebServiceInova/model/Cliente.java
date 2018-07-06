@@ -48,7 +48,7 @@ public class Cliente extends MinhaEntidade {
 	private String endereco;
 	
 	@Enumerated(EnumType.STRING)
-	private situacaoCliente situacaoCliente;
+	private SituacaoCliente situacaoCliente;
 
 	@NotNull
 	@ManyToOne
@@ -119,11 +119,11 @@ public class Cliente extends MinhaEntidade {
 		this.endereco = endereco;
 	}
 	
-	public situacaoCliente getSituacaoCliente() {
+	public SituacaoCliente getSituacaoCliente() {
 		return situacaoCliente;
 	}
 
-	public void setSituacaoCliente(situacaoCliente situacaoCliente) {
+	public void setSituacaoCliente(SituacaoCliente situacaoCliente) {
 		this.situacaoCliente = situacaoCliente;
 	}
 
