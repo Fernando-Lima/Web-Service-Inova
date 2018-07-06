@@ -1,12 +1,12 @@
 package com.inova.webservice.WebServiceInova.model;
 
-public enum situacaoCliente {
+public enum SituacaoCliente {
 	ATIVO ("Ativo"),
 	INATIVO("Inativo");
 	
 	private String descricao;
 	
-	private situacaoCliente(String descricao) {
+	private SituacaoCliente(String descricao) {
 		this.descricao = descricao;
 	}
 	public String getDescricao() {
