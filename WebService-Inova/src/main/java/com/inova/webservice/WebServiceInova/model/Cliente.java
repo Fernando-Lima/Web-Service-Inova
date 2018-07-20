@@ -41,7 +41,6 @@ public class Cliente extends MinhaEntidade {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy", timezone="GMT-3")
 	private Date dataFinalContrato;
 
-	@NotNull
 	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss", timezone="GMT-3")
 	private Date sla;
@@ -55,6 +54,7 @@ public class Cliente extends MinhaEntidade {
 	@NotNull
 	private String endereco;
 	
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	private SituacaoCliente situacaoCliente;
 
@@ -91,7 +91,7 @@ public class Cliente extends MinhaEntidade {
 	}
 
 	public void setDataFinalContrato(Date dataFinalContrato) {
-		this.dataFinalContrato = new Date();
+		this.dataFinalContrato = dataFinalContrato;
 	}
 
 	public Date getSla() {
@@ -99,7 +99,7 @@ public class Cliente extends MinhaEntidade {
 	}
 
 	public void setSla(Date sla) {
-		this.sla = new Date();
+		this.sla = sla;
 	}
 
 	public Integer getNumeroAditivo() {
