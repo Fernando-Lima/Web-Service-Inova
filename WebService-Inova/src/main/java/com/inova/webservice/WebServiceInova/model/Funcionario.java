@@ -38,7 +38,7 @@ public class Funcionario extends MinhaEntidade{
 	
 	private Integer ramal;
 	
-	private String usuario;
+	private String login;
 	
 	private String senha;
 	
@@ -115,11 +115,11 @@ public class Funcionario extends MinhaEntidade{
 	}
 	
 	public String getUsuario() {
-		return usuario;
+		return login;
 	}
 	
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+	public void setUsuario(String login) {
+		this.login = login;
 	}
 	
 	public String getSenha() {
