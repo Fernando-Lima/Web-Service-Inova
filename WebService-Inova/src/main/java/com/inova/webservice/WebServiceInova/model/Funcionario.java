@@ -38,7 +38,7 @@ public class Funcionario extends MinhaEntidade{
 	
 	private Integer ramal;
 	
-	private String login;
+	private String login; // utilizar email
 	
 	private String senha;
 	
