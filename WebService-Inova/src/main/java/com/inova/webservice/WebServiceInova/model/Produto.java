@@ -26,20 +26,18 @@ public class Produto extends MinhaEntidade{
 	@NotNull
 	private String descricao;
 	
-	@NotNull
+	
 	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
 	private Date garantia;
 
-	@NotNull
+	
 	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
 	private Date dataEntrada; //dia em que foi dado entrada do produto
 	
 	@ManyToOne
-	@NotNull
 	private Fornecedor fornecedor;
 	
 	@ManyToOne
-	@NotNull
 	private Setor setor;
 
 	public String getNome() {
