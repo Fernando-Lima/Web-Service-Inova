@@ -10,33 +10,38 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Produto extends MinhaEntidade{
+public class Produto extends MinhaEntidade {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@NotNull
 	private String nome;
-	
-	@Column(unique=true, length = 30)
+
+	@Column(unique = true, length = 30)
 	private Long patrimonio;
-	
+
 	@NotNull
 	private String descricao;
-	
-	
+
+	@ManyToOne
+	private Modelo modelo;
+
+	private String mac;
+
+	private String ns;
+
 	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
 	private Date garantia;
 
-	
 	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
-	private Date dataEntrada; //dia em que foi dado entrada do produto
-	
+	private Date dataEntrada; // dia em que foi dado entrada do produto
+
 	@ManyToOne
 	private Fornecedor fornecedor;
-	
+
 	@ManyToOne
 	private Setor setor;
 
@@ -64,6 +69,30 @@ public class Produto extends MinhaEntidade{
 		this.descricao = descricao;
 	}
 
+	public Modelo getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(Modelo modelo) {
+		this.modelo = modelo;
+	}
+
+	public String getMac() {
+		return mac;
+	}
+
+	public void setMac(String mac) {
+		this.mac = mac;
+	}
+
+	public String getNs() {
+		return ns;
+	}
+
+	public void setNs(String ns) {
+		this.ns = ns;
+	}
+
 	public Date getGarantia() {
 		return garantia;
 	}
@@ -71,19 +100,19 @@ public class Produto extends MinhaEntidade{
 	public void setGarantia(Date garantia) {
 		this.garantia = new Date();
 	}
-	
+
 	public Date getDataEntrada() {
 		return dataEntrada;
 	}
-	
+
 	public void setDataEntrada(Date dataEntrada) {
 		this.dataEntrada = new Date();
 	}
-	
+
 	public Setor getSetor() {
 		return setor;
 	}
-	
+
 	public void setSetor(Setor setor) {
 		this.setor = setor;
 	}
