@@ -17,7 +17,7 @@ public class Setor extends MinhaEntidade{
 	
 	@ManyToOne
 	@NotNull
-	private Unidade unidade;
+	private Unidade unidade; // Empresa
 	
 	public void setNome(String nome) {
 		this.nome = nome;
