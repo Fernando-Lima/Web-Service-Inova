@@ -10,13 +10,13 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 @Entity
-public class Funcionario extends MinhaEntidade{
+public class Usuario extends MinhaEntidade{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
 	@NotNull
 	private String nome;
 	
@@ -114,11 +114,11 @@ public class Funcionario extends MinhaEntidade{
 		this.ramal = ramal;
 	}
 	
-	public String getUsuario() {
+	public String getLogin() {
 		return login;
 	}
 	
-	public void setUsuario(String login) {
+	public void setLogin(String login) {
 		this.login = login;
 	}
 	
@@ -137,5 +137,5 @@ public class Funcionario extends MinhaEntidade{
 	public void setSetor(Setor setor) {
 		this.setor = setor;
 	}
-	
+
 }
