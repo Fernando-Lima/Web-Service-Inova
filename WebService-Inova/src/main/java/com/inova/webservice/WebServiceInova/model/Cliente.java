@@ -27,8 +27,8 @@ public class Cliente extends MinhaEntidade {
 	private String nome;
 
 	@NotNull
-	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss", timezone="GMT-3")
+//	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora
+//	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss", timezone="GMT-3")
 	private Date data;
 
 	@DateTimeFormat(pattern="dd/MM/yyyy")
@@ -56,7 +56,7 @@ public class Cliente extends MinhaEntidade {
 	
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	private SituacaoCliente situacaoCliente;
+	private SituacaoCliente situacao;
 
 	@NotNull
 	@ManyToOne
@@ -127,12 +127,12 @@ public class Cliente extends MinhaEntidade {
 		this.endereco = endereco;
 	}
 	
-	public SituacaoCliente getSituacaoCliente() {
-		return situacaoCliente;
+	public SituacaoCliente getSituacao() {
+		return situacao;
 	}
 
-	public void setSituacaoCliente(SituacaoCliente situacaoCliente) {
-		this.situacaoCliente = situacaoCliente;
+	public void setSituacao(SituacaoCliente situacao) {
+		this.situacao = situacao;
 	}
 
 	public Cidade getCidade() {
