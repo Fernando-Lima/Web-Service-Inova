@@ -61,6 +61,9 @@ public class Cliente extends MinhaEntidade {
 	@NotNull
 	@ManyToOne
 	private Cidade cidade;
+	
+	private Long telefone;
+	private String email;
 
 	public String getNome() {
 		return nome;
@@ -141,5 +144,17 @@ public class Cliente extends MinhaEntidade {
 
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
+	}
+	public Long getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(Long telefone) {
+		this.telefone = telefone;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }
