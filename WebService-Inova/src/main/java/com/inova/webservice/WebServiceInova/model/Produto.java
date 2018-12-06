@@ -29,8 +29,10 @@ public class Produto extends MinhaEntidade {
 	@ManyToOne
 	private Modelo modelo;
 
+	@Column(unique = true)
 	private String mac;
 
+	@Column(unique = true)
 	private String ns;
 
 	@Temporal(TemporalType.TIMESTAMP) // Cria a o campo datatype da tabela como Datatime, retorna data e hora

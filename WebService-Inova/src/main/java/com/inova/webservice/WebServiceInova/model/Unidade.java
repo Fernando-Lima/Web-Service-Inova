@@ -11,40 +11,30 @@ public class Unidade extends MinhaEntidade{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	
 	@NotNull
 	private String nome;
 	
-	@NotNull
-	private String endereco;
-	
 	@ManyToOne
 	@NotNull
-	private Cidade cidade;
-	
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
+	private Cliente cliente;
+
 	public String getNome() {
 		return nome;
 	}
-	
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	}
 	
-	public String getEndereco() {
-		return endereco;
-	}
 	
-	public void setCidade(Cidade cidade) {
-		this.cidade = cidade;
-	}
-	
-	public Cidade getCidade() {
-		return cidade;
-	}
+
 }
-
-
