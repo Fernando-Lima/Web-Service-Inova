@@ -1,6 +1,9 @@
 package com.inova.webservice.WebServiceInova.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -13,8 +16,8 @@ public class Ramal extends MinhaEntidade{
 	
 	@NotNull
 	private Integer ramal;
-	//fazer o relacionamento com o setor cliente;
-	private SetorCliente setorCliente;
+	@ManyToMany(targetEntity=SetorCliente.class)
+	private List<SetorCliente> setorCliente;
 
 	public Integer getRamal() {
 		return ramal;
@@ -24,11 +27,11 @@ public class Ramal extends MinhaEntidade{
 		this.ramal = ramal;
 	}
 
-	public SetorCliente getSetorCliente() {
+	public List<SetorCliente> getSetorCliente() {
 		return setorCliente;
 	}
 
-	public void setSetorCliente(SetorCliente setorCliente) {
+	public void setSetorCliente(List<SetorCliente> setorCliente) {
 		this.setorCliente = setorCliente;
 	}
 	

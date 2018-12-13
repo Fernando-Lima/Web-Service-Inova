@@ -1,14 +1,14 @@
 package com.inova.webservice.WebServiceInova.model;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -26,8 +26,8 @@ public class SetorCliente extends MinhaEntidade{
 	@NotNull
 	private Unidade unidade;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	private List<Ramal> ramal = new ArrayList<>();
+	@ManyToMany(targetEntity=Ramal.class)
+	private List<Ramal> ramal;
 
 	public String getNome() {
 		return nome;

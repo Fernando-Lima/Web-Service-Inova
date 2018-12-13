@@ -108,7 +108,7 @@ public class Produto extends MinhaEntidade {
 	}
 
 	public void setDataEntrada(Date dataEntrada) {
-		this.dataEntrada = new Date();
+		this.dataEntrada = dataEntrada;
 	}
 
 	public Setor getSetor() {
