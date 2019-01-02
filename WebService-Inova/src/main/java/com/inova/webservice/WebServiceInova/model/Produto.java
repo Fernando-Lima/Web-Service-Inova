@@ -84,7 +84,11 @@ public class Produto extends MinhaEntidade {
 	}
 
 	public void setMac(String mac) {
-		this.mac = mac.replaceAll(" ", "");
+		if(mac == "") {
+			this.mac = null;
+		}else {
+			this.mac = mac.replaceAll(" ", "");
+		}
 	}
 
 	public String getNs() {
@@ -92,7 +96,11 @@ public class Produto extends MinhaEntidade {
 	}
 
 	public void setNs(String ns) {
-		this.ns = ns.replaceAll(" ", "");
+		if(ns == "") {
+			this.ns = null;
+		}else{
+			this.ns = ns.replaceAll(" ", "");
+		}
 	}
 
 	public Date getGarantia() {
